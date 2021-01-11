@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   >;
   return (
     <Container>
-      <Header title="Home" onPress={() => navigation.openDrawer()} />
+      <Header title="About" onPress={() => navigation.openDrawer()} />
 
       <Button
         title="Open Menu Lateral"

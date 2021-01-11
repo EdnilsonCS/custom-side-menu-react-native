@@ -7,7 +7,7 @@ interface MenuItemProps {
   icon: string;
   label: string;
   onPress?(): void;
-  navigation: DrawerContentComponentProps;
+  stack: DrawerContentComponentProps;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -15,15 +15,15 @@ const MenuItem: React.FC<MenuItemProps> = ({
   icon,
   label,
   onPress,
-  navigation,
+  stack,
 }) => {
   const ActiveRouteName = useMemo(() => {
     if (!routeName) {
       return '';
     }
 
-    return navigation.state.routeNames[Number(navigation.state.index)];
-  }, [navigation, routeName]);
+    return stack.state.routeNames[Number(stack.state.index)];
+  }, [stack, routeName]);
 
   const IsActive = useMemo(() => {
     return ActiveRouteName === routeName;
@@ -33,12 +33,12 @@ const MenuItem: React.FC<MenuItemProps> = ({
     if (onPress) {
       onPress();
     } else if (routeName) {
-      navigation.navigation.navigate(routeName);
+      stack.navigation.navigate(routeName);
     }
-  }, [navigation, routeName, onPress]);
+  }, [stack, routeName, onPress]);
   return (
     <Container key={routeName} isActive={IsActive} onPress={navigationToScreen}>
-      <IconMenu name={icon} size={24} color={IsActive ? '#000' : '#BFF'} />
+      <IconMenu name={icon} size={24} color={IsActive ? '#000' : '#B0E0E6'} />
       <CustomText isActive={IsActive}>{label}</CustomText>
     </Container>
   );

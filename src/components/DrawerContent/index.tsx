@@ -21,6 +21,11 @@ const DrawerContent = (
       route: 'Home',
       icon: 'home',
     },
+    {
+      label: 'About',
+      route: 'About',
+      icon: 'information',
+    },
   ];
 
   return (
@@ -28,14 +33,14 @@ const DrawerContent = (
       <Body>
         <HeaderBody>
           <View>
-            <Logo name="icon-light" />
+            <Logo size={50} name="account-circle" />
           </View>
           <NameUser>Ednilson</NameUser>
           <TitleUser>Desenvolvedor</TitleUser>
         </HeaderBody>
         {menuItems.map(item => (
           <MenuItem
-            navigation={props}
+            stack={props}
             key={item.route}
             icon={item.icon}
             routeName={item.route}
@@ -45,7 +50,7 @@ const DrawerContent = (
       </Body>
       <Footer>
         <MenuItem
-          navigation={props}
+          stack={props}
           onPress={() => console.log('Teste')}
           icon="power"
           label="Sair"
