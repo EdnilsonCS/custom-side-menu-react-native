@@ -19,11 +19,11 @@ export const CustomText = styled.Text<CustomTextProps>`
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.1px;
-  color: '#999';
+  color: #999;
   ${props =>
     props.isActive &&
     css`
-      color: '#ccc000';
+      color: #ccc000;
     `}
 `;
 

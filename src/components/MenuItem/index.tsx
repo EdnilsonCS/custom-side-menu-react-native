@@ -37,7 +37,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
     }
   }, [navigation, routeName, onPress]);
   return (
-    <Container key="3" isActive={IsActive} onPress={navigationToScreen}>
+    <Container key={routeName} isActive={IsActive} onPress={navigationToScreen}>
       <IconMenu name={icon} size={24} color={IsActive ? '#000' : '#BFF'} />
       <CustomText isActive={IsActive}>{label}</CustomText>
     </Container>

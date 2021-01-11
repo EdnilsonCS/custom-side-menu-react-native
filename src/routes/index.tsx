@@ -3,7 +3,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from '../screens/home';
 import DrawerContent from '../components/DrawerContent';
 
-const Drawer = createDrawerNavigator();
+export type RootDrawerParamList = {
+  Home: undefined;
+};
+
+const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 const DrawerNavigation: React.FC = () => {
   return (
